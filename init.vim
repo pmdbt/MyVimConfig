@@ -30,7 +30,7 @@ let g:deoplete#enable_at_startup = 1
 "autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 "
 ""Determines which airline-theme to use"
-let g:airline_theme='molokai'
+let g:airline_theme='gruvbox'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
@@ -49,7 +49,7 @@ let g:neomake_pyton_enabled_makers = ['pylint']
 "
 :set nu
 :set colorcolumn=80
-:set highlight ColorColumn ctermbg=white guibg=white
+:set highlight colorcolumn ctermbg=white guibg=white
 
 " keymapping
 :nnoremap <F5> :buffers<CR>:buffer<Space>
