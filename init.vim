@@ -21,8 +21,8 @@ call plug#end()
 colorscheme farout
 set cursorline
 set showmatch
-filetype plugin indent on
 syntax on
+filetype on
 set encoding=utf-8
 set clipboard=unnamedplus
 let python_highlight_all = 1
@@ -40,11 +40,14 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 "" Enable alignment
 let g:neoformat_basic_format_align = 1
 
-Enable tab to spaces conversion
 let g:neoformat_basic_format_retab = 1
 
 " Enable trimming of trailing whitespace
 let g:neoformat_basic_format_trim = 1
+
+" custom formatting based on file types
+autocmd FileType html setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType css setlocal shiftwidth=2 softtabstop=2 expandtab
 
 " Set linter for python
 let g:neomake_pyton_enabled_makers = ['pylint']
