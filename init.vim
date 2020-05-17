@@ -8,14 +8,15 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'davidhalter/jedi-vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'deoplete-plugins/deoplete-jedi'
-Plug 'deoplete-plugins/deoplete-go', { 'do': 'make' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
 Plug 'sbdchd/neoformat'
 Plug 'scrooloose/nerdtree'
 Plug 'neomake/neomake'
 Plug 'tmhedberg/SimpylFold'
-
+"Packages for Golang development
+Plug 'deoplete-plugins/deoplete-go', { 'do': 'make' }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
 colorscheme farout
@@ -28,6 +29,10 @@ set clipboard=unnamedplus
 let python_highlight_all = 1
 let g:deoplete#enable_at_startup = 1
 
+let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
+call deoplete#custom#option('omni_patterns', {
+\ 'go': '[^. *\t]\.\w*',
+\})
 "Auto close auto-complete window"
 "autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 "
@@ -48,6 +53,7 @@ let g:neoformat_basic_format_trim = 1
 " custom formatting based on file types
 autocmd FileType html setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType css setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType go setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 
 " Set linter for python
 let g:neomake_pyton_enabled_makers = ['pylint']
