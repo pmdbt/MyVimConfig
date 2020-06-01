@@ -1,7 +1,8 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
 "Plug 'NLKNguyen/papercolor-theme'
-Plug 'fcpg/vim-farout'
+"Plug 'fcpg/vim-farout'
+Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -19,7 +20,7 @@ Plug 'deoplete-plugins/deoplete-go', { 'do': 'make' }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
-colorscheme farout
+autocmd vimenter * colorscheme gruvbox
 set cursorline
 set showmatch
 syntax on
@@ -54,6 +55,7 @@ let g:neoformat_basic_format_trim = 1
 autocmd FileType html setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType css setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType go setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+autocmd FileType json setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 
 " Set linter for python
 let g:neomake_pyton_enabled_makers = ['pylint']
