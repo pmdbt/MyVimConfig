@@ -2,7 +2,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 "Plug 'NLKNguyen/papercolor-theme'
 "Plug 'fcpg/vim-farout'
-Plug 'morhetz/gruvbox'
+"Plug 'morhetz/gruvbox'
+Plug 'cocopon/iceberg.vim'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -18,9 +19,11 @@ Plug 'tmhedberg/SimpylFold'
 "Packages for Golang development
 Plug 'deoplete-plugins/deoplete-go', { 'do': 'make' }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+"Pycharm neovim plugin to sync with pycharm IDE
+Plug 'beeender/comrade'
 call plug#end()
 
-autocmd vimenter * colorscheme gruvbox
+colorscheme iceberg
 set cursorline
 set showmatch
 syntax on
