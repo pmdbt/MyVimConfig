@@ -3,7 +3,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 "Plug 'NLKNguyen/papercolor-theme'
 "Plug 'fcpg/vim-farout'
 "Plug 'morhetz/gruvbox'
-Plug 'cocopon/iceberg.vim'
+"Plug 'cocopon/iceberg.vim'
+Plug 'joshdick/onedark.vim'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -16,6 +17,8 @@ Plug 'sbdchd/neoformat'
 Plug 'scrooloose/nerdtree'
 Plug 'neomake/neomake'
 Plug 'tmhedberg/SimpylFold'
+Plug 'bling/vim-bufferline'
+Plug 'voldikss/vim-floaterm'
 "Packages for Golang development
 Plug 'deoplete-plugins/deoplete-go', { 'do': 'make' }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -23,10 +26,11 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'beeender/comrade'
 call plug#end()
 
-colorscheme iceberg
+syntax on
+au ColorScheme * hi Normal ctermbg=None
+colorscheme onedark
 set cursorline
 set showmatch
-syntax on
 filetype on
 set encoding=utf-8
 set clipboard=unnamedplus
@@ -41,9 +45,9 @@ call deoplete#custom#option('omni_patterns', {
 "autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 "
 ""Determines which airline-theme to use"
-let g:airline_theme='molokai'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_nr_show = 1
+"let g:airline_theme='molokai'
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#buffer_nr_show = 1
 
 "Lets neoformat do basic formatting if file type is not detected"
 "" Enable alignment
@@ -69,4 +73,18 @@ let g:neomake_pyton_enabled_makers = ['pylint']
 ":set highlight colorcolumn ctermbg=white guibg=white
 
 " keymapping
+
+" remap to press F5 to list all open buffers
 :nnoremap <F5> :buffers<CR>:buffer<Space>
+
+" remap jj to exit insert mode
+imap jj <Esc>
+
+" remap Escape to enter normal mode for nvim terminals
+:tnoremap <Esc><Esc> <C-\><C-N>
+
+" remap to use Shift + h to hide and unhide floating terminal window
+:nnoremap <S-h> :FloatermToggle<CR> 
+
+" gvim setting for always on buffer displays
+set wildchar=<Tab> wildmenu wildmode=full
