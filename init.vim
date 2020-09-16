@@ -2,9 +2,9 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 "Plug 'NLKNguyen/papercolor-theme'
 "Plug 'fcpg/vim-farout'
-"Plug 'morhetz/gruvbox'
+Plug 'morhetz/gruvbox'
 "Plug 'cocopon/iceberg.vim'
-Plug 'joshdick/onedark.vim'
+"Plug 'joshdick/onedark.vim'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -28,7 +28,7 @@ call plug#end()
 
 syntax on
 au ColorScheme * hi Normal ctermbg=None
-colorscheme onedark
+colorscheme gruvbox
 set cursorline
 set showmatch
 filetype on
