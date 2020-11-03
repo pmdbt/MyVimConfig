@@ -2,9 +2,9 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 "Plug 'NLKNguyen/papercolor-theme'
 "Plug 'fcpg/vim-farout'
-"Plug 'morhetz/gruvbox'
+Plug 'morhetz/gruvbox'
 "Plug 'cocopon/iceberg.vim'
-Plug 'joshdick/onedark.vim'
+"Plug 'joshdick/onedark.vim'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -28,7 +28,7 @@ call plug#end()
 
 syntax on
 au ColorScheme * hi Normal ctermbg=None
-colorscheme onedark
+"colorscheme onedark
 set cursorline
 set showmatch
 filetype on
@@ -83,8 +83,8 @@ imap jj <Esc>
 " remap Escape to enter normal mode for nvim terminals
 :tnoremap <Esc><Esc> <C-\><C-N>
 
-" remap to use Shift + h to hide and unhide floating terminal window
-:nnoremap <S-h> :FloatermToggle<CR> 
+" remap to use hh to hide and unhide floating terminal window
+:nnoremap <Esc>h :FloatermToggle<CR>
 
 " gvim setting for always on buffer displays
 set wildchar=<Tab> wildmenu wildmode=full
