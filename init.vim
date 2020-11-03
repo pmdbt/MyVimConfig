@@ -28,7 +28,7 @@ call plug#end()
 
 syntax on
 au ColorScheme * hi Normal ctermbg=None
-"colorscheme onedark
+colorscheme gruvbox
 set cursorline
 set showmatch
 filetype on
