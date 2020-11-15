@@ -1,8 +1,12 @@
+set nocompatible
+
 call plug#begin('~/.local/share/nvim/plugged')
 
+Plug 'sheerun/vim-polyglot'
+Plug 'franbach/miramare'
 "Plug 'NLKNguyen/papercolor-theme'
 "Plug 'fcpg/vim-farout'
-Plug 'morhetz/gruvbox'
+"Plug 'morhetz/gruvbox'
 "Plug 'cocopon/iceberg.vim'
 "Plug 'joshdick/onedark.vim'
 Plug 'tpope/vim-surround'
@@ -28,7 +32,10 @@ call plug#end()
 
 syntax on
 au ColorScheme * hi Normal ctermbg=None
-colorscheme gruvbox
+set termguicolors
+let g:miramare_enable_italic = 1
+let g:miramare_disable_italic_comment = 1
+colorscheme miramare
 set cursorline
 set showmatch
 filetype on
