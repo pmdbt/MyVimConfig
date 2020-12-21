@@ -31,11 +31,11 @@ Plug 'beeender/comrade'
 call plug#end()
 
 syntax on
-au ColorScheme * hi Normal ctermbg=None
 set termguicolors
 let g:miramare_enable_italic = 1
 let g:miramare_disable_italic_comment = 1
 colorscheme miramare
+au ColorScheme * hi Normal guibg=NONE ctermbg=None
 set cursorline
 set showmatch
 filetype on
