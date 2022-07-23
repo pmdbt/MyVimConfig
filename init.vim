@@ -77,6 +77,8 @@ let g:neomake_pyton_enabled_makers = ['pylint']
 
 :set nu
 :set colorcolumn=80
+:set splitbelow
+:set splitright
 ":set highlight colorcolumn ctermbg=white guibg=white
 
 " keymapping
@@ -89,6 +91,12 @@ imap jj <Esc>
 
 " remap Escape to enter normal mode for nvim terminals
 :tnoremap <Esc><Esc> <C-\><C-N>
+
+" remap ctrl + hjkl to move around panes
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
 
 " remap to use hh to hide and unhide floating terminal window
 :nnoremap <Esc>h :FloatermToggle<CR>
